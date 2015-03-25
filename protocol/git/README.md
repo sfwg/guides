@@ -18,13 +18,30 @@ Maintain a Repo
 Write a Feature
 ---------------
 
+Naming your branch
+
+* There is a story id (click the 'ID' box next to it.).  This is the first of the three parts.
+* There is a description.  This is the second part.
+* We define work as either a feature, a bug or a chore.  This is the third part.
+* These part are separated with a forward slash '/'
+
+	- 87654321/this-changes-everying/feature
+	- 87654321/this-fixes-everying/bug
+	- 87654321/this-makes-everying-better/chore
+
 Create a local feature branch based off master.
 
     git checkout master
     git pull
     git checkout -b <branch-name>
 
-Prefix the branch name with your initials.
+<!--Prefix the branch name with your initials.
+-->
+Share your branch.
+
+    git push origin <branch-name>
+
+
 
 Rebase frequently to incorporate upstream changes.
 
@@ -40,23 +57,19 @@ When you've staged the changes, commit them.
     git status
     git commit --verbose
 
-Write a [good commit message]. Example format:
+Write a [GOOD COMMIT MESSAGE] please. Example format:
 
-    Present-tense summary under 50 characters
+    Present-tense, active-voice summary under 50 characters [ID#]
 
     * More information about commit (under 72 characters).
     * More information about commit (under 72 characters).
 
-    http://project.management-system.com/ticket/123
+    https://www.pivotaltracker.com/n/projects/123456/stories/12345678
 
 If you've created more than one commit, use a rebase to squash them into
 cohesive commits with good messages:
 
     git rebase -i origin/master
-
-Share your branch.
-
-    git push origin <branch-name>
 
 Submit a [GitHub pull request].
 
@@ -64,6 +77,19 @@ Ask for a code review in the project's chat room.
 
 [good commit message]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [GitHub pull request]: https://help.github.com/articles/using-pull-requests/
+
+
+STOP READING HERE
+-----------
+WIP Commits
+-----------
+
+At the end of a hard day, we should always push code to the cloud.
+
+    git checkout <branch-name>
+    ./bin/setup
+    git diff staging/master..HEAD
+
 
 Review Code
 -----------
